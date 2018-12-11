@@ -1,0 +1,52 @@
+---
+layout: default
+---
+<div class="container-lg px-3">
+  <header class="py-6">
+    <div class="pb-0 pt-md-4 py-lg-6">
+      <div class="d-md-flex flex-md-items-center flex-md-row-reverse flex-md-justify-center gutter-md-spacious">
+        <div class="col-md-8 text-center text-md-left">
+          <h1 class="alt-h2 text-uppercase lh-condensed text-brand-blue">Mayuresh Krishna</h1>
+          <h2 class="alt-h2 lh-condensed">
+            Strategic Leader, Architect, Gamer, Dad
+          </h2>
+          <p class="alt-lead text-gray-light mt-2 lh-condensed" style="opacity: 0.6">
+            Posts and thoughts on different subjects,<br>
+            like technology, history, relegion.
+          </p>
+        </div>
+        <div class="col-3 mx-auto mx-md-0 offset-md-1 text-center text-md-right">
+          <img src="/assets/profile.png" class="width-fit" alt="Probot logo">
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+
+<div id="explore" class="bg-gray-light border-top border-gray-light">
+  <div class="container-lg px-3 page-section">
+    <h2 class="alt-h1 text-center">Explore</h2>
+    <p class="lead text-center col-md-7 col-sm-10 mx-auto">
+      Check out these Posts.
+    </p>
+
+  <div class="d-md-flex flex-wrap gutter flex-auto">
+      {% assign techs = site.techs | sort: 'views' | reverse %}
+      {% for tech in techs limit:3 %}
+        {% include tech.html tech=tech %}
+      {% endfor %}
+    </div>
+
+     <div class="d-md-flex flex-wrap gutter flex-auto">
+      {% assign hists = site.hists | sort: 'views' | reverse %}
+      {% for hist in hists limit:3 %}
+        {% include hist.html hist=hist %}
+      {% endfor %}
+    </div>
+
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>
